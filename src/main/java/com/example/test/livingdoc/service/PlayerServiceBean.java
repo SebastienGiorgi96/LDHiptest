@@ -25,8 +25,8 @@ public class PlayerServiceBean implements PlayerServiceInterface {
     @Override
     public PlayerEntity findTeamById(long _id) {
 
-        PlayerEntity team = repository.findOne(_id);
-        return team;
+        PlayerEntity player = repository.findOne(_id);
+        return player;
 
     }
 
