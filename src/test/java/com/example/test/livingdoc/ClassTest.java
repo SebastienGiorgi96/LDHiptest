@@ -31,7 +31,7 @@ public class ClassTest {
 
         // assert statements
         assertEquals("Paris SG", team.getName());
-        assertEquals("FC Barcelone", teamInt.getName());
+        assertEquals("Liverpool FC", teamInt.getName());
 
     }
 

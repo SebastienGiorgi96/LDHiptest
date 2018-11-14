@@ -1,9 +1,9 @@
 package com.example.test.livingdoc.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,7 +24,7 @@ public class TeamEntity {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     private List<PlayerEntity> players;
 
     public TeamEntity() {
@@ -57,6 +57,15 @@ public class TeamEntity {
 
     public void setPlayers(List<PlayerEntity> players) {
         this.players = players;
+    }
+
+    public void addPlayerInTeam(PlayerEntity player) {
+        List<PlayerEntity> listOfPlayers = this.getPlayers();
+        if (listOfPlayers == null) {
+            listOfPlayers = new ArrayList<PlayerEntity>();
+        }
+        listOfPlayers.add(player);
+        this.setPlayers(listOfPlayers);
     }
 
     @Override

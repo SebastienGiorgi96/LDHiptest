@@ -30,6 +30,10 @@ public class PlayerEntity {
     @JoinColumn(name = "team_id", nullable = false)
     private TeamEntity team;
 
+    public PlayerEntity() {
+
+    }
+
     public PlayerEntity(long id, String name, int num, String poste) {
         this.id = id;
         this.name = name;
@@ -75,6 +79,7 @@ public class PlayerEntity {
 
     public void setTeam(TeamEntity team) {
         this.team = team;
+        this.team.addPlayerInTeam(this);
     }
 
     @Override
