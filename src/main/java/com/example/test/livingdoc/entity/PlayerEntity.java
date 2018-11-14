@@ -61,8 +61,17 @@ public class PlayerEntity {
         return num;
     }
 
-    public void setNum(int num) {
-        this.num = num;
+    public void setNum(int _num) {
+        boolean exist = false;
+        for (PlayerEntity p : this.team.getPlayers()) {
+            if (p.num == _num) {
+                exist = true;
+            }
+        }
+        if (!exist) {
+            this.num = _num;
+        }
+
     }
 
     public String getPosition() {
