@@ -9,3 +9,4 @@ Feature: Players and teams
   Given two players
   When a player has the same number
   Then we choose another number
+  

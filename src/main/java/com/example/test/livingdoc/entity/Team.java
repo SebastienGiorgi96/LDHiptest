@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "TEAM")
-public class TeamEntity {
+public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +25,12 @@ public class TeamEntity {
     private String name;
 
     @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
-    private List<PlayerEntity> players;
+    private List<Player> players;
 
-    public TeamEntity() {
+    public Team() {
     }
 
-    public TeamEntity(long id, String name) {
+    public Team(long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -51,18 +51,18 @@ public class TeamEntity {
         this.name = name;
     }
 
-    public List<PlayerEntity> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(List<PlayerEntity> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 
-    public void addPlayerInTeam(PlayerEntity player) {
-        List<PlayerEntity> listOfPlayers = this.getPlayers();
+    public void addPlayerInTeam(Player player) {
+        List<Player> listOfPlayers = this.getPlayers();
         if (listOfPlayers == null) {
-            listOfPlayers = new ArrayList<PlayerEntity>();
+            listOfPlayers = new ArrayList<Player>();
         }
         listOfPlayers.add(player);
         this.setPlayers(listOfPlayers);
@@ -87,7 +87,7 @@ public class TeamEntity {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TeamEntity other = (TeamEntity) obj;
+        final Team other = (Team) obj;
 
         if (!Objects.equals(this.name, other.name)) {
             return false;

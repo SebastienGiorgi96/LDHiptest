@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.test.livingdoc.entity.PlayerEntity;
+import com.example.test.livingdoc.entity.Player;
 import com.example.test.livingdoc.repository.PlayerRepository;
 
 @Service
@@ -15,17 +15,17 @@ public class PlayerServiceBean implements PlayerServiceInterface {
     private PlayerRepository repository;
 
     @Override
-    public List<PlayerEntity> findAllPlayers() {
+    public List<Player> findAllPlayers() {
 
-        List<PlayerEntity> players = (List<PlayerEntity>) repository.findAll();
+        List<Player> players = (List<Player>) repository.findAll();
 
         return players;
     }
 
     @Override
-    public PlayerEntity findTeamById(long _id) {
+    public Player findTeamById(long _id) {
 
-        PlayerEntity player = repository.findOne(_id);
+        Player player = repository.findOne(_id);
         return player;
 
     }

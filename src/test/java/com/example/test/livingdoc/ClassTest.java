@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.example.test.livingdoc.entity.PlayerEntity;
-import com.example.test.livingdoc.entity.TeamEntity;
+import com.example.test.livingdoc.entity.Player;
+import com.example.test.livingdoc.entity.Team;
 import com.example.test.livingdoc.service.PlayerServiceBean;
 import com.example.test.livingdoc.service.TeamServiceBean;
 
@@ -26,8 +26,8 @@ public class ClassTest {
     @Test
     public void teamTest() {
 
-        TeamEntity teamInt = teamService.findTeamById(6);
-        TeamEntity team = new TeamEntity(9, "Paris SG");
+        Team teamInt = teamService.findTeamById(6);
+        Team team = new Team(9, "Paris SG");
 
         // assert statements
         assertEquals("Paris SG", team.getName());
@@ -38,8 +38,8 @@ public class ClassTest {
     @Test
     public void playerTest() {
 
-        PlayerEntity playerTest = playerService.findTeamById(7);
-        TeamEntity club = playerTest.getTeam();
+        Player playerTest = playerService.findTeamById(7);
+        Team club = playerTest.getTeam();
         assertEquals("Salah", playerTest.getName());
         assertEquals("Liverpool FC", club.getName());
 

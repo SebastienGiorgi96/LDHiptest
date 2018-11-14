@@ -2,8 +2,8 @@ package com.example.test.livingdoc;
 
 import org.junit.Assert;
 
-import com.example.test.livingdoc.entity.PlayerEntity;
-import com.example.test.livingdoc.entity.TeamEntity;
+import com.example.test.livingdoc.entity.Player;
+import com.example.test.livingdoc.entity.Team;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,20 +11,20 @@ import cucumber.api.java.en.When;
 
 public class PlayerSteps {
 
-    private PlayerEntity player;
-    private PlayerEntity player2;
-    private PlayerEntity player3;
-    private TeamEntity team;
+    private Player player;
+    private Player player2;
+    private Player player3;
+    private Team team;
 
     @Given("^New player$")
     public void create_a_new_player() throws Throwable {
-        player = new PlayerEntity(1, "Messi", 10, "Attaquant");
-        player2 = new PlayerEntity(2, "Suarez", 9, "Attaquant");
+        player = new Player(1, "Messi", 10, "Attaquant");
+        player2 = new Player(2, "Suarez", 9, "Attaquant");
     }
 
     @When("^a Player in a team$")
     public void an_team_is_declared_for_Messi() {
-        team = new TeamEntity(1, "FC Barcelone");
+        team = new Team(1, "FC Barcelone");
 
     }
 
@@ -37,15 +37,15 @@ public class PlayerSteps {
 
     @Given("^two players$")
     public void two_new_players() throws Throwable {
-        player = new PlayerEntity(1, "Coutinho", 7, "Milieu");
-        player2 = new PlayerEntity(2, "Umtiti", 23, "Defenseur");
-        player3 = new PlayerEntity(3, "Piqué", 3, "Defenseur");
+        player = new Player(1, "Coutinho", 7, "Milieu");
+        player2 = new Player(2, "Umtiti", 23, "Defenseur");
+        player3 = new Player(3, "Piqué", 3, "Defenseur");
 
     }
 
     @When("^a player has the same number$")
     public void a_player_has_the_same_number() {
-        team = new TeamEntity(1, "FC Barcelone");
+        team = new Team(1, "FC Barcelone");
         player.setTeam(team);
         player2.setTeam(team);
         player3.setTeam(team);

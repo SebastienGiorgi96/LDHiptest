@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.test.livingdoc.entity.TeamEntity;
+import com.example.test.livingdoc.entity.Team;
 import com.example.test.livingdoc.service.TeamServiceInterface;
 
 @Controller
@@ -19,7 +19,7 @@ public class TeamController {
     @RequestMapping("/teams")
     public String findCities(Model model) {
 
-        List<TeamEntity> teams = (List<TeamEntity>) teamService.findAll();
+        List<Team> teams = (List<Team>) teamService.findAll();
 
         model.addAttribute("teams", teams);
 

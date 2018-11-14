@@ -2,12 +2,12 @@ package com.example.test.livingdoc.service;
 
 import java.util.List;
 
-import com.example.test.livingdoc.entity.TeamEntity;
+import com.example.test.livingdoc.entity.Team;
 
 public interface TeamServiceInterface {
 
-    List<TeamEntity> findAll();
+    List<Team> findAll();
 
-    TeamEntity findTeamById(long _id);
+    Team findTeamById(long _id);
 
 }

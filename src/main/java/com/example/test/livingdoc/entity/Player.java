@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "PLAYER")
-public class PlayerEntity {
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,13 +28,13 @@ public class PlayerEntity {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "team_id", nullable = false)
-    private TeamEntity team;
+    private Team team;
 
-    public PlayerEntity() {
+    public Player() {
 
     }
 
-    public PlayerEntity(long id, String name, int num, String poste) {
+    public Player(long id, String name, int num, String poste) {
         this.id = id;
         this.name = name;
         this.num = num;
@@ -63,7 +63,7 @@ public class PlayerEntity {
 
     public void setNum(int _num) {
         boolean exist = false;
-        for (PlayerEntity p : this.team.getPlayers()) {
+        for (Player p : this.team.getPlayers()) {
             if (p.num == _num) {
                 exist = true;
             }
@@ -82,11 +82,11 @@ public class PlayerEntity {
         this.poste = position;
     }
 
-    public TeamEntity getTeam() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeam(TeamEntity team) {
+    public void setTeam(Team team) {
         this.team = team;
         this.team.addPlayerInTeam(this);
     }
@@ -110,7 +110,7 @@ public class PlayerEntity {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        PlayerEntity other = (PlayerEntity) obj;
+        Player other = (Player) obj;
         if (id != other.id)
             return false;
         if (name == null) {
