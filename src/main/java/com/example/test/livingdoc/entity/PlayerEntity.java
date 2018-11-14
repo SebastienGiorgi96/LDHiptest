@@ -30,6 +30,13 @@ public class PlayerEntity {
     @JoinColumn(name = "team_id", nullable = false)
     private TeamEntity team;
 
+    public PlayerEntity(long id, String name, int num, String poste) {
+        this.id = id;
+        this.name = name;
+        this.num = num;
+        this.poste = poste;
+    }
+
     public long getId() {
         return id;
     }

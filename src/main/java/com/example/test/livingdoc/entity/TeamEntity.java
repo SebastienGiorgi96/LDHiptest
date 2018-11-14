@@ -25,7 +25,6 @@ public class TeamEntity {
     private String name;
 
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-
     private List<PlayerEntity> players;
 
     public TeamEntity() {
@@ -50,6 +49,14 @@ public class TeamEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<PlayerEntity> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<PlayerEntity> players) {
+        this.players = players;
     }
 
     @Override
