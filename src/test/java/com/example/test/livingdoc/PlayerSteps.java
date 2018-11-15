@@ -40,7 +40,6 @@ public class PlayerSteps {
         player = new Player(1, "Coutinho", 7, "Milieu");
         player2 = new Player(2, "Umtiti", 23, "Defenseur");
         player3 = new Player(3, "Piqué", 3, "Defenseur");
-
     }
 
     @When("^a player has the same number$")

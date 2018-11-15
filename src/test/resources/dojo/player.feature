@@ -1,4 +1,6 @@
 Feature: Players and teams
+  
+  As a coach, i want to create players in my team
 
   Scenario: Creating a player in a team  
   Given New player
