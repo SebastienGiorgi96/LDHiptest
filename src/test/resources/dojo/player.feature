@@ -3,6 +3,9 @@ Feature: Players and teams
   As a coach, i want to create players in my team
 
   Scenario: Creating a player in a team  
+  #{IMPORTANT: Asciidoc markup inside *steps* must be surrounded by *curly brackets*.}
+
+  # {NOTE: Steps comments are placed *before* each steps so this comment is for the *WHEN* step.}
   Given New player
   When  a Player in a team
   Then  the Team has a player
