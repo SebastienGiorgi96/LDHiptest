@@ -63,14 +63,13 @@ public class ClassTest {
                 .docType("book")
                 .icons("font").numbered(false)
                 .sourceHighlighter("coderay")
-                .docTitle("Documentation Title")
+                .docTitle("Test des features en adoc")
                 .sectAnchors(true).sectLink(true);
 
         CukedoctorConverter converter = Cukedoctor.instance(features, attrs);
-        converter.setFilename("target/living_documentation.adoc");
+        converter.setFilename("target/living_doc.adoc");
 
         converter.saveDocumentation();
-        assert (FileUtil.loadFile("target/living_documentation.adoc")).exists();
+        assert (FileUtil.loadFile("target/living_doc.adoc")).exists();
     }
-
 }
