@@ -68,6 +68,12 @@ public class Team {
         this.setPlayers(listOfPlayers);
     }
 
+    public void removePlayerInTeam(Player player) {
+        List<Player> listOfPlayers = this.getPlayers();
+        listOfPlayers.remove(player);
+        this.setPlayers(listOfPlayers);
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

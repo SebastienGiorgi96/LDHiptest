@@ -2,12 +2,12 @@ Feature: Players and teams
   
   As a coach, i want to create players in my team
 
-  Scenario: Creating a player in a team  
+  Scenario: Creating twos players in a team  
   #{IMPORTANT: Asciidoc markup inside *steps* must be surrounded by *curly brackets*.}
+  # {NOTE: Steps comments are placed *before* each steps so this comment is for the *WHEN* step.}
 
 
   Given New player
-    # {NOTE: Steps comments are placed *before* each steps so this comment is for the *WHEN* step.}
   When  a Player in a team
   Then  the Team has a player
   
@@ -16,3 +16,7 @@ Feature: Players and teams
   When a player has the same number
   Then we choose another number
   
+  Scenario: Transfer of Critiano Ronaldo
+  Given Ronaldo plays for Real Madrid
+  When Ronaldo moves to the Juventus
+  Then Real Madrid hasn't Ronaldo anymore
