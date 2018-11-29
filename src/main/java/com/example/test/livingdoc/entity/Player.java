@@ -34,11 +34,11 @@ public class Player {
 
     }
 
-    public Player(long id, String name, int num, String poste) {
-        this.id = id;
-        this.name = name;
-        this.num = num;
-        this.poste = poste;
+    public Player(long _id, String _name, int _num, String _poste) {
+        this.id = _id;
+        this.name = _name;
+        this.num = _num;
+        this.poste = _poste;
     }
 
     public long getId() {
@@ -66,6 +66,7 @@ public class Player {
         for (Player p : this.team.getPlayers()) {
             if (p.num == _num) {
                 exist = true;
+                break;
             }
         }
         if (!exist) {
@@ -87,12 +88,14 @@ public class Player {
     }
 
     public void setTeam(Team team) {
-        if (this.team != null) {
-            Team oldTeam = this.team;
-            oldTeam.removePlayerInTeam(this);
+        if (this.team != team) {
+            if (this.team != null) {
+                Team oldTeam = this.team;
+                oldTeam.removePlayerInTeam(this);
+            }
+            this.team = team;
+            this.team.addPlayerInTeam(this);
         }
-        this.team = team;
-        this.team.addPlayerInTeam(this);
     }
 
     @Override

@@ -30,9 +30,10 @@ public class Team {
     public Team() {
     }
 
-    public Team(long id, String name) {
-        this.id = id;
-        this.name = name;
+    public Team(long _id, String _name) {
+        this.id = _id;
+        this.name = _name;
+        this.players = new ArrayList<Player>();
     }
 
     public long getId() {
@@ -55,23 +56,16 @@ public class Team {
         return players;
     }
 
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
-
     public void addPlayerInTeam(Player player) {
-        List<Player> listOfPlayers = this.getPlayers();
-        if (listOfPlayers == null) {
-            listOfPlayers = new ArrayList<Player>();
+        if (!this.players.contains(player)) {
+            this.players.add(player);
         }
-        listOfPlayers.add(player);
-        this.setPlayers(listOfPlayers);
     }
 
     public void removePlayerInTeam(Player player) {
-        List<Player> listOfPlayers = this.getPlayers();
-        listOfPlayers.remove(player);
-        this.setPlayers(listOfPlayers);
+        if (this.players.contains(player)) {
+            this.players.remove(player);
+        }
     }
 
     @Override
