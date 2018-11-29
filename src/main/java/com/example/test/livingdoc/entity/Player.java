@@ -89,10 +89,7 @@ public class Player {
 
     public void setTeam(Team team) {
         if (this.team != team) {
-            if (this.team != null) {
-                Team oldTeam = this.team;
-                oldTeam.removePlayerInTeam(this);
-            }
+
             this.team = team;
             this.team.addPlayerInTeam(this);
         }

@@ -16,7 +16,7 @@ Feature: Players and teams
   When a player has the same number
   Then we choose another number
   
-  Scenario: Transfer of Critiano Ronaldo
+  Scenario: Transfer of Cristiano Ronaldo
   Given Ronaldo plays for Real Madrid
   When Ronaldo moves to the Juventus
   Then Real Madrid hasn't Ronaldo anymore

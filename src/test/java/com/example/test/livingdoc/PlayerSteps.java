@@ -80,7 +80,7 @@ public class PlayerSteps {
 
     @Then("^Real Madrid hasn't Ronaldo anymore$")
     public void the_old_team_is_empty() {
-        Assert.assertEquals(1, team1.getPlayers().size());
+        Assert.assertEquals(0, team1.getPlayers().size());
 
     }
 
